@@ -47,106 +47,128 @@
     <meta name="if:Show Search Navigation" content="1"/>
     <meta name="if:Show Following" content="0"/>
     <meta name="if:Show Likes" content="0"/>
-    <meta name="select:Option Font" content="HuiFont,"            title="Hui Font, Fixed Pitch, Normal Weight"          />
-    <meta name="select:Option Font" content="HuiFontP,"           title="Hui Font, Proportional Pitch, Normal Weight"   />
-    <meta name="select:Option Font" content="MakibaFont,"         title="Makiba Font, Fixed Pitch, Normal Weight"       />
-    <meta name="select:Option Font" content="MakibaFontP,"        title="Makiba Font, Proportional Pitch, Normal Weight"/>
-    <meta name="select:Option Font" content="MakibaFontB,"        title="Makiba Font, Fixed Pitch, Bold Weight"         />
-    <meta name="select:Option Font" content="MakibaFontBP,"       title="Makiba Font, Proportional Pitch, Bold Weight"  />
-    <meta name="select:Option Font" content="OhisamaFont,"        title="Ohisama Font, Fixed Pitch, Normal Weight"      />
-    <meta name="select:Option Font" content="OhisamaFontB,"       title="Ohisama Font, Fixed Pitch, Bold Weight"        />
-    <meta name="select:Option Font" content="Noto Sans Japanese," title="Noto Sans Japanese"                            />
-    <meta name="select:Option Font" content="cwTeXHei, serif,"    title="cwTeXHei"                                      />
-    <meta name="select:Option Font" content="cwTeXMing, serif,"   title="cwTeXMing"                                     />
-    <meta name="select:Option Font" content=""                    title="None"                                          />
+    <meta name="if:Use Hui Font Fixed Pitch"                         content="0"/>
+    <meta name="if:Use Hui Font Proportional Pitch"                  content="0"/>
+    <meta name="if:Use Makiba Font Fixed Pitch Normal Weight"        content="0"/>
+    <meta name="if:Use Makiba Font Fixed Pitch Bold Weight"          content="0"/>
+    <meta name="if:Use Makiba Font Proportional Pitch Normal Weight" content="0"/>
+    <meta name="if:Use Makiba Font Proportional Pitch Bold Weight"   content="0"/>
+    <meta name="if:Use Ohisama Font Fixed Pitch Normal Weight"       content="0"/>
+    <meta name="if:Use Ohisama Font Fixed Pitch Bold Weight"         content="0"/>
+    <meta name="if:Use cwTeXHei"                                     content="0"/>
+    <meta name="if:Use cwTeXMing"                                    content="0"/>
+    <meta name="if:Use Well Known Japanese Fonts"                    content="0"/>
+    <meta name="if:Use Noto Sans Japanese"                           content="0"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="{Favicon}"/>
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
     <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}"/>
-    <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"/>
+    {block:IfUseNotoSansJapanese}
+      <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"/>
+    {/block:IfUseNotoSansJapanese}
     <style>
-      @import url(http://fonts.googleapis.com/earlyaccess/cwtexming.css);
-      @import url(http://fonts.googleapis.com/earlyaccess/cwtexhei.css);
-      @font-face{
-        font-family:
-          HuiFont;
-        src:
-          url("http://meta-scheme.jp/software/font/HuiFont29.woff") format("woff");
-        font-weight:
-          normal;
-        font-style:
-          normal;
-      }
-      @font-face{
-        font-family:
-          HuiFontP;
-        src:
-          url("http://meta-scheme.jp/software/font/HuiFontP29.woff") format("woff");
-        font-weight:
-          normal;
-        font-style:
-          normal;
-      }
-      @font-face{
-        font-family:
-          MakibaFont;
-        src:
-          url("http://meta-scheme.jp/software/font/MakibaFont13.woff") format("woff");
-        font-weight:
-          normal;
-        font-style:
-          normal;
-      }
-      @font-face{
-        font-family:
-          MakibaFontB;
-        src:
-          url("http://meta-scheme.jp/software/font/MakibaFontB13.woff") format("woff");
-        font-weight:
-          bold;
-        font-style:
-          normal;
-      }
-      @font-face{
-        font-family:
-          MakibaFontP;
-        src:
-          url("http://meta-scheme.jp/software/font/MakibaFontP13.woff") format("woff");
-        font-weight:
-          normal;
-        font-style:
-          normal;
-      }
-      @font-face{
-        font-family:
-          MakibaFontBP;
-        src:
-          url("http://meta-scheme.jp/software/font/MakibaFontBP13.woff") format("woff");
-        font-weight:
-          bold;
-        font-style:
-          normal;
-      }
-      @font-face{
-        font-family:
-          OhisamaFont;
-        src:
-          url("http://meta-scheme.jp/software/font/OhisamaFont11.woff") format("woff");
-        font-weight:
-          normal;
-        font-style:
-          normal;
-      }
-      @font-face{
-        font-family:
-          OhisamaFontB;
-        src:
-          url("http://meta-scheme.jp/software/font/OhisamaFontB11.woff") format("woff");
-        font-weight:
-          bold;
-        font-style:
-          normal;
-      }
+      {block:IfUseHuiFontFixedPitch}
+        @font-face{
+          font-family:
+            HuiFont;
+          src:
+            url("http://meta-scheme.jp/software/font/HuiFont29.woff") format("woff");
+          font-weight:
+            normal;
+          font-style:
+            normal;
+        }
+      {/block:IfUseHuiFontFixedPitch}
+      {block:IfUseHuiFontProportionalPitch}
+        @font-face{
+          font-family:
+            HuiFontP;
+          src:
+            url("http://meta-scheme.jp/software/font/HuiFontP29.woff") format("woff");
+          font-weight:
+            normal;
+          font-style:
+            normal;
+        }
+      {/block:IfUseHuiFontProportionalPitch}
+      {block:IfUseMakibaFontFixedPitchNormalWeight}
+        @font-face{
+          font-family:
+            MakibaFont;
+          src:
+            url("http://meta-scheme.jp/software/font/MakibaFont13.woff") format("woff");
+          font-weight:
+            normal;
+          font-style:
+            normal;
+        }
+      {/block:IfUseMakibaFontFixedPitchNormalWeight}
+      {block:IfUseMakibaFontFixedPitchBoldWeight}
+        @font-face{
+          font-family:
+            MakibaFontB;
+          src:
+            url("http://meta-scheme.jp/software/font/MakibaFontB13.woff") format("woff");
+          font-weight:
+            bold;
+          font-style:
+            normal;
+        }
+      {/block:IfUseMakibaFontFixedPitchBoldWeight}
+      {block:IfUseMakibaFontProportionalPitchNormalWeight}
+        @font-face{
+          font-family:
+            MakibaFontP;
+          src:
+            url("http://meta-scheme.jp/software/font/MakibaFontP13.woff") format("woff");
+          font-weight:
+            normal;
+          font-style:
+            normal;
+        }
+      {/block:IfUseMakibaFontProportionalPitchNormalWeight}
+      {block:IfUseMakibaFontProportionalPitchBoldWeight}
+        @font-face{
+          font-family:
+            MakibaFontBP;
+          src:
+            url("http://meta-scheme.jp/software/font/MakibaFontBP13.woff") format("woff");
+          font-weight:
+            bold;
+          font-style:
+            normal;
+        }
+      {/block:IfUseMakibaFontProportionalPitchBoldWeight}
+      {block:IfUseOhisamaFontFixedPitchNormalWeight}
+        @font-face{
+          font-family:
+            OhisamaFont;
+          src:
+            url("http://meta-scheme.jp/software/font/OhisamaFont11.woff") format("woff");
+          font-weight:
+            normal;
+          font-style:
+            normal;
+        }
+      {/block:IfUseOhisamaFontFixedPitchNormalWeight}
+      {block:IfUseOhisamaFontFixedPitchBoldWeight}
+        @font-face{
+          font-family:
+            OhisamaFontB;
+          src:
+            url("http://meta-scheme.jp/software/font/OhisamaFontB11.woff") format("woff");
+          font-weight:
+            bold;
+          font-style:
+            normal;
+        }
+      {/block:IfUseOhisamaFontFixedPitchBoldWeight}
+      {block:IfUsecwTeXHei}
+        @import url(http://fonts.googleapis.com/earlyaccess/cwtexhei.css);
+      {/block:IfUsecwTeXHei}
+      {block:IfUsecwTeXMing}
+        @import url(http://fonts.googleapis.com/earlyaccess/cwtexming.css);
+      {/block:IfUsecwTeXMing}
       html, body, * {
         writing-mode:
           horizontal-tb;
@@ -163,7 +185,43 @@
         direction:
           ltr;
         font-family:
-          {select:Option Font}{TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+          {block:IfUseHuiFontFixedPitch}
+            HuiFont,
+          {/block:IfUseHuiFontFixedPitch}
+          {block:IfUseHuiFontProportionalPitch}
+            HuiFontP,
+          {/block:IfUseHuiFontProportionalPitch}
+          {block:IfUseMakibaFontFixedPitchNormalWeight}
+            MakibaFont,
+          {/block:IfUseMakibaFontFixedPitchNormalWeight}
+          {block:IfUseMakibaFontFixedPitchBoldWeight}
+            MakibaFontB,
+          {/block:IfUseMakibaFontFixedPitchBoldWeight}
+          {block:IfUseMakibaFontProportionalPitchNormalWeight}
+            MakibaFontP,
+          {/block:IfUseMakibaFontProportionalPitchNormalWeight}
+          {block:IfUseMakibaFontProportionalPitchBoldWeight}
+            MakibaFontBP,
+          {/block:IfUseMakibaFontProportionalPitchBoldWeight}
+          {block:IfUseOhisamaFontFixedPitchNormalWeight}
+            OhisamaFont,
+          {/block:IfUseOhisamaFontFixedPitchNormalWeight}
+          {block:IfUseOhisamaFontFixedPitchBoldWeight}
+            OhisamaFontB,
+          {/block:IfUseOhisamaFontFixedPitchBoldWeight}
+          {block:IfUsecwTeXHei}
+            cwTeXHei, serif,
+          {/block:IfUsecwTeXHei}
+          {block:IfUsecwTeXMing}
+            cwTeXMing, serif,
+          {/block:IfUsecwTeXMing}
+          {block:IfUseWellKnownJapaneseFonts}
+            YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,
+          {/block:IfUseWellKnownJapaneseFonts}
+          {block:IfUseNotoSansJapanese}
+            'Noto Sans Japanese',
+          {/block:IfUseNotoSansJapanese}
+          {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
         box-sizing:
           border-box;
       }
@@ -278,7 +336,43 @@
         color:
           {TitleColor};
         font-family:
-          {select:Option Font}{TitleFont};
+          {block:IfUseHuiFontFixedPitch}
+            HuiFont,
+          {/block:IfUseHuiFontFixedPitch}
+          {block:IfUseHuiFontProportionalPitch}
+            HuiFontP,
+          {/block:IfUseHuiFontProportionalPitch}
+          {block:IfUseMakibaFontFixedPitchNormalWeight}
+            MakibaFont,
+          {/block:IfUseMakibaFontFixedPitchNormalWeight}
+          {block:IfUseMakibaFontFixedPitchBoldWeight}
+            MakibaFontB,
+          {/block:IfUseMakibaFontFixedPitchBoldWeight}
+          {block:IfUseMakibaFontProportionalPitchNormalWeight}
+            MakibaFontP,
+          {/block:IfUseMakibaFontProportionalPitchNormalWeight}
+          {block:IfUseMakibaFontProportionalPitchBoldWeight}
+            MakibaFontBP,
+          {/block:IfUseMakibaFontProportionalPitchBoldWeight}
+          {block:IfUseOhisamaFontFixedPitchNormalWeight}
+            OhisamaFont,
+          {/block:IfUseOhisamaFontFixedPitchNormalWeight}
+          {block:IfUseOhisamaFontFixedPitchBoldWeight}
+            OhisamaFontB,
+          {/block:IfUseOhisamaFontFixedPitchBoldWeight}
+          {block:IfUsecwTeXHei}
+            cwTeXHei, serif,
+          {/block:IfUsecwTeXHei}
+          {block:IfUsecwTeXMing}
+            cwTeXMing, serif,
+          {/block:IfUsecwTeXMing}
+          {block:IfUseWellKnownJapaneseFonts}
+            YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,
+          {/block:IfUseWellKnownJapaneseFonts}
+          {block:IfUseNotoSansJapanese}
+            'Noto Sans Japanese',
+          {/block:IfUseNotoSansJapanese}
+          {TitleFont};
         font-weight:
           {TitleFontWeight};
         font-size:

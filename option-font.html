@@ -67,6 +67,11 @@
     <meta name="if:Use cwTeXMing"                                    content="0"/>
     <meta name="if:Use Well Known Japanese Fonts"                    content="0"/>
     <meta name="if:Use Noto Sans Japanese"                           content="0"/>
+    <meta name="if:Use Armed Banana"                                 content="0"/>
+    <meta name="if:Use IPAex Gothic"                                 content="0"/>
+    <meta name="if:Use IPAex Minchou"                                content="0"/>
+    <meta name="if:Use Kouzan Mouhitsu Font Gyousho"                 content="0"/>
+    <meta name="if:Use Font Awesome"                                 content="0"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="{Favicon}"/>
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
@@ -74,6 +79,9 @@
     {block:IfUseNotoSansJapanese}
       <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css"/>
     {/block:IfUseNotoSansJapanese}
+    {block:IfUseFontAwesome}
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    {/block:IfUseFontAwesome}
     <style>
       {block:IfUseHuiFontFixedPitch}
         @font-face{
@@ -177,6 +185,54 @@
       {block:IfUsecwTeXMing}
         @import url(http://fonts.googleapis.com/earlyaccess/cwtexming.css);
       {/block:IfUsecwTeXMing}
+      {block:IfUseArmedBanana}
+        @font-face{
+          font-family:
+            ArmedBanana;
+          src:
+            url("http://meta-scheme.jp/software/font/ArmedBanana.woff") format("woff");
+          font-weight:
+            normal;
+          font-style:
+            normal;
+        }
+      {/block:IfUseArmedBanana}
+      {block:IfUseIPAexGothic}
+        @font-face{
+          font-family:
+            IPAexG;
+          src:
+            url("http://meta-scheme.jp/software/font/ipaexg.woff") format("woff");
+          font-weight:
+            normal;
+          font-style:
+            normal;
+        }
+      {/block:IfUseIPAexGothic}
+      {block:IfUseIPAexMinchou}
+        @font-face{
+          font-family:
+            IPAexM;
+          src:
+            url("http://meta-scheme.jp/software/font/ipaexm.woff") format("woff");
+          font-weight:
+            normal;
+          font-style:
+            normal;
+        }
+      {/block:IfUseIPAexMinchou}
+      {block:IfUseKouzanMouhitsuFontGyousho}
+        @font-face{
+          font-family:
+            KouzanMouhitsuFontGyousho;
+          src:
+            url("http://meta-scheme.jp/software/font/KouzanMouhitsuFontGyousho.woff") format("woff");
+          font-weight:
+            normal;
+          font-style:
+            normal;
+        }
+      {/block:IfUseKouzanMouhitsuFontGyousho}
       html, body, * {
         writing-mode:
           horizontal-tb;
@@ -218,10 +274,10 @@
             OhisamaFontB,
           {/block:IfUseOhisamaFontFixedPitchBoldWeight}
           {block:IfUsecwTeXHei}
-            cwTeXHei, serif,
+            'cwTeXHei', serif,
           {/block:IfUsecwTeXHei}
           {block:IfUsecwTeXMing}
-            cwTeXMing, serif,
+            'cwTeXMing', serif,
           {/block:IfUsecwTeXMing}
           {block:IfUseWellKnownJapaneseFonts}
             YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,
@@ -229,6 +285,18 @@
           {block:IfUseNotoSansJapanese}
             'Noto Sans Japanese',
           {/block:IfUseNotoSansJapanese}
+          {block:IfUseArmedBanana}
+            ArmedBanana,
+          {/block:IfUseArmedBanana}
+          {block:IfUseIPAexGothic}
+            IPAexG,
+          {/block:IfUseIPAexGothic}
+          {block:IfUseIPAexMinchou}
+            IPAexM,
+          {/block:IfUseIPAexMinchou}
+          {block:IfUseKouzanMouhitsuFontGyousho}
+            KouzanMouhitsuFontGyousho,
+          {/block:IfUseKouzanMouhitsuFontGyousho}
           {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
         box-sizing:
           border-box;
@@ -369,10 +437,10 @@
             OhisamaFontB,
           {/block:IfUseOhisamaFontFixedPitchBoldWeight}
           {block:IfUsecwTeXHei}
-            cwTeXHei, serif,
+            'cwTeXHei', serif,
           {/block:IfUsecwTeXHei}
           {block:IfUsecwTeXMing}
-            cwTeXMing, serif,
+            'cwTeXMing', serif,
           {/block:IfUsecwTeXMing}
           {block:IfUseWellKnownJapaneseFonts}
             YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo,
@@ -380,6 +448,18 @@
           {block:IfUseNotoSansJapanese}
             'Noto Sans Japanese',
           {/block:IfUseNotoSansJapanese}
+          {block:IfUseArmedBanana}
+            ArmedBanana,
+          {/block:IfUseArmedBanana}
+          {block:IfUseIPAexGothic}
+            IPAexG,
+          {/block:IfUseIPAexGothic}
+          {block:IfUseIPAexMinchou}
+            IPAexM,
+          {/block:IfUseIPAexMinchou}
+          {block:IfUseKouzanMouhitsuFontGyousho}
+            KouzanMouhitsuFontGyousho,
+          {/block:IfUseKouzanMouhitsuFontGyousho}
           {TitleFont};
         font-weight:
           {TitleFontWeight};
@@ -388,6 +468,86 @@
         margin:
           0.5rem;
       }
+      {block:IfUseHuiFontFixedPitch}
+        .HuiFont, .HuiFont * {
+          font-family: HuiFont !important;
+        }
+      {/block:IfUseHuiFontFixedPitch}
+      {block:IfUseHuiFontProportionalPitch}
+        .HuiFontP, .HuiFontP * {
+          font-family: HuiFontP !important;
+        }
+      {/block:IfUseHuiFontProportionalPitch}
+      {block:IfUseMakibaFontFixedPitchNormalWeight}
+        .MakibaFont, .MakibaFont * {
+          font-family: MakibaFont !important;
+        }
+      {/block:IfUseMakibaFontFixedPitchNormalWeight}
+      {block:IfUseMakibaFontFixedPitchBoldWeight}
+        .MakibaFontB, .MakibaFontB * {
+          font-family: MakibaFontB !important;
+        }
+      {/block:IfUseMakibaFontFixedPitchBoldWeight}
+      {block:IfUseMakibaFontProportionalPitchNormalWeight}
+        .MakibaFontP, .MakibaFontP * {
+          font-family: MakibaFontP !important;
+        }
+      {/block:IfUseMakibaFontProportionalPitchNormalWeight}
+      {block:IfUseMakibaFontProportionalPitchBoldWeight}
+        .MakibaFontBP, .MakibaFontBP * {
+          font-family: MakibaFontBP !important;
+        }
+      {/block:IfUseMakibaFontProportionalPitchBoldWeight}
+      {block:IfUseOhisamaFontFixedPitchNormalWeight}
+        .OhisamaFont, .OhisamaFont * {
+          font-family: OhisamaFont !important;
+        }
+      {/block:IfUseOhisamaFontFixedPitchNormalWeight}
+      {block:IfUseOhisamaFontFixedPitchBoldWeight}
+        .OhisamaFontB, .OhisamaFontB * {
+          font-family: OhisamaFontB !important;
+        }
+      {/block:IfUseOhisamaFontFixedPitchBoldWeight}
+      {block:IfUsecwTeXHei}
+        .cwTeXHei, .cwTeXHei * {
+          font-family: 'cwTeXHei', serif !important;
+        }
+      {/block:IfUsecwTeXHei}
+      {block:IfUsecwTeXMing}
+        .cwTeXMing, .cwTeXMing * {
+          font-family: 'cwTeXMing', serif !important;
+        }
+      {/block:IfUsecwTeXMing}
+      {block:IfUseWellKnownJapaneseFonts}
+        .WellKnownJapaneseFonts, .WellKnownJapaneseFonts * {
+          font-family: YuMincho,Hiragino Mincho ProN,'@Meiryo',Meiryo !important;
+        }
+      {/block:IfUseWellKnownJapaneseFonts}
+      {block:IfUseNotoSansJapanese}
+        .NotoSansJapanese, .NotoSansJapanese * {
+          font-family: 'Noto Sans Japanese' !important;
+        }
+      {/block:IfUseNotoSansJapanese}
+      {block:IfUseArmedBanana}
+        .ArmedBanana, .ArmedBanana * {
+          font-family: ArmedBanana !important;
+        }
+      {/block:IfUseArmedBanana}
+      {block:IfUseIPAexGothic}
+        .IPAexG, .IPAexG * {
+          font-family: IPAexG !important;
+        }
+      {/block:IfUseIPAexGothic}
+      {block:IfUseIPAexMinchou}
+        .IPAexM, .IPAexM * {
+          font-family: IPAexM !important;
+        }
+      {/block:IfUseIPAexMinchou}
+      {block:IfUseKouzanMouhitsuFontGyousho}
+        .KouzanMouhitsuFontGyousho, .KouzanMouhitsuFontGyousho * {
+          font-family: KouzanMouhitsuFontGyousho !important;
+        }
+      {/block:IfUseKouzanMouhitsuFontGyousho}
       p.description {
         font-size:
           medium;
